@@ -1,7 +1,5 @@
-function createFinal(inputs) {
-  let inputFiles = inputs.map(function(grouping, index) {
-    return `${index}.mp4`
-  }).join(' ')
-  return `ffmpeg-concat ${inputFiles} -o edited.mp4`
+function createFinal() {
+  return `ffmpeg -i merged_video.mp4 -i merged_audio.aac -shortest -c:v copy -c:a aac edited_video.mp4`
 }
+
 module.exports = createFinal

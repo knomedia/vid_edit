@@ -9,7 +9,7 @@ function createFrameList(inputs) {
 
 function createFrames(inputs) {
   let frameList = createFrameList(inputs)
-  return `ffmpeg -i original.mp4 -force_key_frames ${frameList} framed.mp4`
+  return `ffmpeg -i original.mp4 -y -force_key_frames ${frameList} framed.mp4`
 }
 
 module.exports = createFrames
